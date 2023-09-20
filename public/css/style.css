@@ -1,0 +1,64 @@
+h1{
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+  text-align: center;
+  background-image: linear-gradient(to left, pink,white);
+}
+.table2{
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 10px;
+  font-size: larger;
+  background-color:skyblue;
+  width: 750px;
+}
+.style
+{
+  font-size: 25px;
+
+}
+.table
+{
+  border-spacing:7px;
+}
+.placeholder
+{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: x-large;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+}
+.button-add,.button-delete
+{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: larger;
+}
+.button-add
+{
+  height: 40px;
+  width: 180px;
+  background-color: palegreen;
+  font-size: larger;
+}
+.button-delete
+{
+  height: 40px;
+  width: 180px;
+  background-color:red;
+  font-size: larger;
+}
+input.checkbox
+{
+  width:20px ;
+  height:20px;
+}
