@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7a2b06c89c.js" crossorigin="anonymous"></script>
+    <title>TO-DO LIST</title>
+    </head>
+        <body>
+            <div class="container">
+                <h1>TO-DO APP</h1>
+                <form action="/add-todo" method="post">
+                <table class="table" align="center">
+                <tr>
+                    <th class="style" > Description</th>
+                    <th class="style">  Category</th>
+                    <th class="style"> Date</th>
+                </tr>
+                <tr class="row2">
+                    <td>
+                        <input type="text" name="description" placeholder="Enter description" class="placeholder">
+                    </td>
+                    <td >
+                        <select class="placeholder" name="category" id="category">
+                            <option value="Category">Select Category</option>
+                            <option value="personal">PERSONAL</option>
+                            <option value="work">WORK</option>
+                            <option value="school">SCHOOL</option>
+                            <option value="cleaning">CLEANING</option>
+                            <option value="other">OTHER</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="placeholder" type="date" name="duedate" placeholder="Enter date" id="date">
+                    </td>
+                </tr>
+                </table>
+                <br>
+                <button class="button-add" type="submit"><i class="fa-solid fa-plus"></i> ADD TASK</button>
+            </form>
+        <div class="box">
+            <form action="delete-contact" method="get">
+            <br>
+            <h2 style="font-size: 30px; color: mediumvioletred;"> TASKS LIST</h2>
+            <table class="table2">
+                <tr class="row3">
+                    <th>Check</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Due Date</th>
+                </tr>
+                <tr>
+                <td colspan="15">
+                    <hr class="table-separator">
+                </td>
+                </tr>
+                <% for(let i of data) { %>
+                    <tr class="row4">
+                    <td>
+                        <input class="checkbox" type="checkbox" name="<%= i._id %>">
+                    </td>
+                    <td>
+                        <%= i.description %>
+                    </td>
+                    <td>
+                        <% if((i.category) === "Category")
+                    {%>
+                        <button style="width: 100px; height: 30px;" >No category</button>
+                    <% } else { %>
+                        <button style="width: 100px; height: 30px;"><%= i.category %></button>
+                    <% } %>
+                </td>
+                <td>
+                    <% if((i.duedate) == ""){ %>
+                        <div> No Deadline</div>
+                    <% } 
+                    else { %>
+                        <div> <%= i.duedate %></div>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                <hr class="table-separator">
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <br>
+        <button class="button-delete" type="submit"><i class="fa-regular fa-trash-can"></i> DELETE TASK</button>
+    </form>
+</div>
+</body>
+</html>
